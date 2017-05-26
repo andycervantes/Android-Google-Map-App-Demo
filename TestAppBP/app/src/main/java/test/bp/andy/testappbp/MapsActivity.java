@@ -94,6 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Button btnRestaurant = (Button) findViewById(R.id.btnBP);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             String gasStation = "gas_station";
+
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
@@ -120,8 +121,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean CheckGooglePlayServices() {
         GoogleApiAvailability googleAPI = GoogleApiAvailability.getInstance();
         int result = googleAPI.isGooglePlayServicesAvailable(this);
-        if(result != ConnectionResult.SUCCESS) {
-            if(googleAPI.isUserResolvableError(result)) {
+        if (result != ConnectionResult.SUCCESS) {
+            if (googleAPI.isUserResolvableError(result)) {
                 googleAPI.getErrorDialog(this, result, 0).show();
             }
             return false;
